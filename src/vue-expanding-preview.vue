@@ -1,6 +1,6 @@
 <style lang='sass' scoped>
 
-#gridexpander {
+#vue-expanding-preview {
     float: left;
     position: relative;
 }
@@ -9,7 +9,7 @@
 
 <template>
 
-<div id='gridexpander' class='gridexpander'>
+<div id='vue-expanding-preview' class='vue-expanding-preview'>
     <slot name='content' v-if='expanded'></slot>
 </div>
 
@@ -32,7 +32,7 @@ function resizeFn() {
 function InitResize() {
     window.removeEventListener('resize', resizeFn)
 
-    if ($('.gridexpander').length !== 0) {
+    if ($('.vue-expanding-preview').length !== 0) {
         window.addEventListener('resize', resizeFn, false)
     }
 }
@@ -59,21 +59,21 @@ function ExecuteExpanded(selectorId, forceResize) {
         })
 
     //overriding placement
-    var cl = item.closest('.js-grid-expander-after-this')
+    var cl = item.closest('.js-vue-expanding-preview-after-this')
     InitResize()
     if (cl.length === 1) {
-        $('#gridexpander').insertAfter(cl[0])
+        $('#vue-expanding-preview').insertAfter(cl[0])
     }
     //no next item
     else if (typeof(nextitem) === 'undefined') {
         if (item.is(':last-child')) {
-            $('#gridexpander').insertAfter(item)
+            $('#vue-expanding-preview').insertAfter(item)
         } else {
-            $('#gridexpander').insertAfter(item.siblings().last())
+            $('#vue-expanding-preview').insertAfter(item.siblings().last())
         }
 
     } else {
-        $('#gridexpander').insertBefore($(nextitem))
+        $('#vue-expanding-preview').insertBefore($(nextitem))
     }
 
     SetGridPosition(forceResize)
@@ -89,13 +89,13 @@ function ExecuteExpanded(selectorId, forceResize) {
 function SetGridPosition(forceResize) {
     //set width to match body
     var width = $('body').width()
-    $('#gridexpander').width(width)
+    $('#vue-expanding-preview').width(width)
 
     //set left to match body
-    $('#gridexpander').css('left', 0)
-    var left = $('#gridexpander').offset().left
+    $('#vue-expanding-preview').css('left', 0)
+    var left = $('#vue-expanding-preview').offset().left
     if (left > 0 || forceResize) {
-        $('#gridexpander').css('left', -left)
+        $('#vue-expanding-preview').css('left', -left)
     }
 }
 
@@ -117,13 +117,13 @@ module.exports = {
     },
     watch: {
         'selectorId': function(val, oldVal) {
-            if ($('#gridexpander').length === 0) {
+            if ($('#vue-expanding-preview').length === 0) {
                 return
             }
 
             //move expander if closed
             if (this.selectorId === -1) {
-                $('#gridexpander').insertAfter('body')
+                $('#vue-expanding-preview').insertAfter('body')
                 return
             }
             this.expanded = ExecuteExpanded(this.selectorId, false)
