@@ -1,8 +1,8 @@
 {
   "name": "vue-expanding-preview",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "An expanding preview ala google images",
-  "main": "dist/vue-expanding-preview.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "andreigec/vue-expanding-preview"
@@ -52,12 +52,7 @@
         "vueify"
       ]
     ]
-  },
-  "scripts": {
-    "docs": "webpack-dev-server --inline --hot --quiet",
-    "builddocs": "webpack --progress --hide-modules && NODE_ENV=production webpack --progress --hide-modules",
-    "build": "webpack --progress --hide-modules --config  webpack.build.min.js && webpack --progress --hide-modules --config  webpack.build.js"
-  },
+  },  
   "author": "andreigec",
   "license": "MIT"
 }
