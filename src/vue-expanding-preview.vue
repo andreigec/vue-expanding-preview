@@ -121,8 +121,10 @@ module.exports = {
             //move expander if closed
             if (this.selectorId === -1) {
                 $('#vue-expanding-preview').insertAfter('body')
+                $('#vue-expanding-preview').hide()
                 return
             }
+            $('#vue-expanding-preview').show()
             this.expanded = ExecuteExpanded(this.selectorId, false)
         }
     },
