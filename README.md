@@ -1,5 +1,7 @@
 #Intro
+
 Reusable expanding preview window for use with grids.
+
 __Warning__: This project is still under development. Contributions are welcome
 
 #Usage
@@ -14,7 +16,7 @@ var ep = require('vue-expanding-preview')
 })
 ```
 
-    ```html
+```html
 <vue-expanding-preview :selector-id.sync='/**-1 for not shown, set to your id of the item to insert after **/'>
     <div slot='content'>
     </div>
