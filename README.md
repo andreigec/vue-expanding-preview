@@ -1,3 +1,9 @@
+<p align="center">
+<a href="https://www.npmjs.com/package/vue-expanding-preview"><img src="https://img.shields.io/npm/dm/vue-expanding-preview.svg" alt="Downloads per month"></a>
+<br/>
+ <a href="https://www.npmjs.com/package/vue-expanding-preview"><img src="https://img.shields.io/npm/v/vue-expanding-preview.svg" alt="Latest npm release"></a>
+</p>
+
 #Intro
 
 Reusable expanding preview window for use with grids.
