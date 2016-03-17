@@ -17,10 +17,7 @@
 
 <script>
 
-var vmdl = require('vue-mdl')
-var card = vmdl.components['mdl-card']
-var button = vmdl.components['mdl-button']
-var ripple = vmdl.directives['mdl-ripple-effect']
+var card = require('vue-mdl').MdlCard
 var $ = require('jquery')
     //var _ = require('underscore')
 var lastSelectorId = -1
@@ -130,11 +127,7 @@ module.exports = {
         }
     },
     components: {
-        'mdl-card': card,
-        'mdl-button': button
-    },
-    directives: {
-        'mdl-ripple-effect': ripple
+        'mdl-card': card
     }
 }
 
